@@ -1,5 +1,14 @@
 function sumItems(array) {
-  // Sum all the numbers in the array
+  let sumTotal = 0;
+  for (num of array) {
+    if (Array.isArray(num)) {
+      sumTotal += sumItems(num);
+    } else {
+      sumTotal += num;
+    }
+  }
+  return sumTotal
 }
 
 module.exports = sumItems;
+
